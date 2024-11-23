@@ -27,7 +27,7 @@ jobs:
       - name: Generate Christmas Tree with One Big Happy Holidays Message
         run: |
           echo "Generating Christmas tree with BIG HAPPY HOLIDAYS message..."
-          # Create the tree pattern and message and save it to a file
+          
           python3 -c "
 height = 7  # Height of the Christmas tree
 tree = []
@@ -50,7 +50,6 @@ scaled_message = scaled_message[:tree_width]  # Truncate to match the width of t
 # Combine the tree and message
 tree_with_message = []
 for i in range(height):
-    # Add the tree
     tree_with_message.append(tree[i])
 
 # Add the "HAPPY HOLIDAYS" message next to the trunk, filling the entire width
@@ -58,7 +57,7 @@ tree_with_message.append(' ' * (height - 2) + '| |' + ' ' * (tree_width - len('|
 
 # Save the result to a file
 with open('dist/christmas_tree_with_large_message.txt', 'w') as f:
-    f.write('\n'.join(tree_with_message))
+    f.write('\\n'.join(tree_with_message))
           "
 
       # Step 3: Deploy the generated file to the 'output' branch
