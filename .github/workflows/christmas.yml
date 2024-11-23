@@ -1,0 +1,72 @@
+name: GitHub Christmas Tree with Large Happy Holidays
+
+on:
+  # Schedule the workflow to run daily at midnight UTC
+  schedule:
+    - cron: "0 0 * * *"
+
+  # Allow manual triggering of the workflow
+  workflow_dispatch:
+
+  # Trigger the workflow on pushes to the main branch
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Create the Christmas tree pattern with one large "HAPPY HOLIDAYS" message
+      - name: Generate Christmas Tree with One Big Happy Holidays Message
+        run: |
+          echo "Generating Christmas tree with BIG HAPPY HOLIDAYS message..."
+          # Create the tree pattern and message and save it to a file
+          python3 -c "
+height = 7  # Height of the Christmas tree
+tree = []
+for i in range(height):
+    tree.append(' ' * (height - i - 1) + '*' * (2 * i + 1))
+
+# Add tree trunk
+tree.append(' ' * (height - 2) + '| |')
+
+# Define the message
+message = 'HAPPY HOLIDAYS'
+
+# Calculate the width of the bottom row of the tree
+tree_width = 2 * (height - 1) + 1  # The width of the bottom row
+
+# Scale the message to fill the width of the tree
+scaled_message = message * (tree_width // len(message))  # Repeat the message to fill the width
+scaled_message = scaled_message[:tree_width]  # Truncate to match the width of the tree
+
+# Combine the tree and message
+tree_with_message = []
+for i in range(height):
+    # Add the tree
+    tree_with_message.append(tree[i])
+
+# Add the "HAPPY HOLIDAYS" message next to the trunk, filling the entire width
+tree_with_message.append(' ' * (height - 2) + '| |' + ' ' * (tree_width - len('| |')) + scaled_message)
+
+# Save the result to a file
+with open('dist/christmas_tree_with_large_message.txt', 'w') as f:
+    f.write('\n'.join(tree_with_message))
+          "
+
+      # Step 3: Deploy the generated file to the 'output' branch
+      - name: Deploy to Output Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          # Optionally, you can set a custom commit message
+          commit_message: "Update Christmas Tree with One Big HAPPY HOLIDAYS message [skip ci]"
