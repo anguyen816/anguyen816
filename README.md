@@ -7,7 +7,8 @@
 🎓Certificates:
 [Genomic Data Science](https://coursera.org/share/e06ef18bf3a16a96bb473e0f39a8105d), 
 [AWS Cloud Technical Essential](https://coursera.org/share/357f5e1fde10d227f140ce6cdc0ea4b9),
-[Bioinformatics I](https://www.coursera.org/account/accomplishments/?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button)
+[UC Sandiego bioinformatic 1.pdf](https://github.com/user-attachments/files/17880253/uc.sandiego.bioinformatic.1.pdf)
+
 
 
 
