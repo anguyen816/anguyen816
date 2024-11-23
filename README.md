@@ -12,3 +12,4 @@
 
 
 
+![snake gif](https://github.com/anguyen816/anguyen816/blob/output/github-snake-dark.svg)
