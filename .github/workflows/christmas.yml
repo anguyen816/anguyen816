@@ -23,12 +23,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: Create the Christmas tree pattern with one large "HAPPY HOLIDAYS" message
-      - name: Generate Christmas Tree with One Big Happy Holidays Message
+      # Step 2: Generate the Christmas tree pattern with one large "HAPPY HOLIDAYS" message
+      - name: Create Python Script for Christmas Tree
         run: |
-          echo "Generating Christmas tree with BIG HAPPY HOLIDAYS message..."
-          
-          python3 -c "
+          echo "
 height = 7  # Height of the Christmas tree
 tree = []
 for i in range(height):
@@ -58,14 +56,18 @@ tree_with_message.append(' ' * (height - 2) + '| |' + ' ' * (tree_width - len('|
 # Save the result to a file
 with open('dist/christmas_tree_with_large_message.txt', 'w') as f:
     f.write('\\n'.join(tree_with_message))
-          "
+" > generate_tree.py
 
-      # Step 3: Deploy the generated file to the 'output' branch
+      # Step 3: Run the Python script to generate the Christmas tree pattern
+      - name: Run Python Script to Generate Tree with Message
+        run: |
+          python3 generate_tree.py
+
+      # Step 4: Deploy the generated file to the 'output' branch
       - name: Deploy to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          # Optionally, you can set a custom commit message
           commit_message: "Update Christmas Tree with One Big HAPPY HOLIDAYS message [skip ci]"
