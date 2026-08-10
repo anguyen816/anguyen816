@@ -1,9 +1,20 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&duration=4980&pause=10&color=BE76F7&width=435&lines=Hi+There!+I'm+Amy.)](https://git.io/typing-svg)
 
-👋 Welcome to my GitHub profile! I am an experienced molecular biologist with a strong background in Next-Generation Sequencing (NGS) techniques, laboratory procedures, and data analysis. Now, I’m excited to leverage my wet lab knowledge and transition into bioinformatics.
+👋 Molecular biologist, 8 years across public health genomics, clinical
+diagnostics, and assay development. I run sequencing end to end:
+MiSeq, NextSeq, NovaSeq, MinION, GridION. What I want next is to own
+the computational half of that work.
 
-🍁 Although I don't have direct real-world bioinformatics experience yet, I have proactively taken courses on platforms like Coursera, and DataCamp to build a strong foundational understanding of bioinformatics and data science. Through these courses, I have earned certificates that have provided me with the essential knowledge and skills to contribute effectively to bioinformatics workflows
+
+🍁Scored 100% on both the wet lab and analysis components of the 2025
+CDC PulseNet WGS Proficiency Test (Salmonella, Listeria, E. coli,
+Vibrio). Also completed the 2025 FDA ONT Sequencing Proficiency
+Exercise using GalaxyTrakr.
+
+Currently building out the command line and pipeline side: Linux,
+Python, Nextflow, and the HackBio AI in Genomics program.
+
 
 🎓Certificates:
 [Genomic Data Science](https://coursera.org/share/e06ef18bf3a16a96bb473e0f39a8105d), 
