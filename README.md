@@ -23,7 +23,3 @@ Python, Nextflow, and the HackBio AI in Genomics program.
 
 📧 amy.nguyen248@gmail.com
 
-
-
-
-![snake gif](https://github.com/anguyen816/anguyen816/blob/output/github-snake-dark.svg)
